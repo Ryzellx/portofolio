@@ -8,15 +8,25 @@ body {
     position: relative;
     overflow-x: hidden;
 }
-.universe-bg {
+.universe-bg, .solar-canvas {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 0;
-    background: radial-gradient(circle at 60% 20%, #fff70033 0%, #0a0a0f 80%),
-                radial-gradient(circle at 20% 80%, #fff 0%, #0a0a0f 80%),
-                linear-gradient(120deg, #fff70011 0%, #0a0a0f 100%);
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
-    animation: bgmove 20s linear infinite alternate;
+}
+.solar-canvas {
+    z-index: -2 !important;
+    filter: brightness(0.45) contrast(1.1) saturate(0.9);
+    opacity: 0.7;
+}
+.universe-bg {
+    z-index: -3 !important;
+    background: radial-gradient(circle at 60% 20%, #fff70022 0%, #0a0a0f 80%),
+                radial-gradient(circle at 20% 80%, #fff1 0%, #0a0a0f 80%),
+                linear-gradient(120deg, #fff70008 0%, #0a0a0f 100%);
+    opacity: 0.7;
 }
 @keyframes bgmove {
     0% { background-position: 60% 20%, 20% 80%, 0 0; }
