@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Portfolio - Rizky Andromeda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="universe-bg"></div>
+    <div id="welcome-overlay">
+        <div class="welcome-content">
+            <h1 class="welcome-title">Welcome to my Portfolio</h1>
+            <div class="welcome-anim">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button id="btnLanjut" class="cta-btn">Lanjut</button>
+        </div>
+    </div>
+    <header class="hero reveal-on-scroll" id="main-content" style="display:none;">
+        <div class="container hero-content">
+            <div class="avatar" style="background-image:url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+            <div class="hero-text">
+                <h1 class="name">Rizky Andromeda</h1>
+                <p class="tagline">Web Developer &amp; Space Enthusiast</p>
+                <ul class="identity-list">
+                    <li><strong>Umur:</strong> 27 tahun</li>
+                    <li><strong>Lokasi:</strong> Bandung, Indonesia</li>
+                </ul>
+                <blockquote class="quote">"Bermimpilah setinggi langit, jika engkau jatuh, engkau akan jatuh di antara bintang-bintang."</blockquote>
+                <a href="#contact" class="cta-btn">Contact Me</a>
+            </div>
+        </div>
+        <button id="btnBack" class="cta-btn" style="position:fixed;top:24px;right:24px;z-index:10001;display:none;">Back</button>
+    </header>
+    <main id="main-content-main" class="reveal-on-scroll" style="display:none;">
+        <section class="about" id="about">
+            <div class="container">
+                <h2>Tentang Saya</h2>
+                <p>Saya adalah seorang web developer yang suka mengeksplorasi teknologi baru dan terinspirasi oleh keindahan alam semesta. Saya percaya bahwa kreativitas dan logika bisa berjalan berdampingan untuk menciptakan solusi digital yang berdampak.</p>
+            </div>
+        </section>
+        <section class="skills" id="skills">
+            <div class="container">
+                <h2>Keahlian</h2>
+                <ul class="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JAVASCRIPT</li>
+                    <li>C++</li>
+                </ul>
+            </div>
+        </section>
+        <section class="education" id="education">
+            <div class="container">
+                <h2>Pendidikan Terakhir</h2>
+                <div class="education-list">
+                    <div class="edu-item">
+                        <h3>SMK</h3>
+                        <span class="edu-major">Teknik Komputer Jaringan dan Telekomunikasi (TJKT)</span>
+                        <span class="edu-year">Lulus 2021</span>
+                        <p>Mempelajari dasar-dasar jaringan komputer, telekomunikasi, dan teknologi informasi modern.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2>Portofolio</h2>
+                <div class="project-list">
+                    <div class="project-card" onclick="window.open('https://calculator-hazel-delta-12.vercel.app', '_blank'); animateClick(this);" style="cursor:pointer;">
+                        <div class="project-thumb" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80');"></div>
+                        <div class="project-info">
+                            <h3>Kalkulator Pintar</h3>
+                            <p>Kalkulator pintar yang bisa matematika dasar, Matematika lanjutan, Kalkulus, sincostan, dll</p>
+                            <a href="https://calculator-hazel-delta-12.vercel.app" target="_blank" class="cta-btn" style="margin-top:1rem;" onclick="event.stopPropagation(); animateClick(this); window.open('https://calculator-hazel-delta-12.vercel.app', '_blank'); return false;">Direct to Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> rizky.andromeda@email.com</p>
+                    <p><strong>Instagram:</strong> @andromeda.dev</p>
+                    <p><strong>Lokasi:</strong> Bandung, Indonesia</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="main-content-footer" class="reveal-on-scroll" style="display:none;">
+        <div class="container">
+            <p>&copy; 2025 Rizky Andromeda</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
