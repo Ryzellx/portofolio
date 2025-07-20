@@ -88,15 +88,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Welcome overlay logic
     const btnLanjut = document.getElementById('btnLanjut');
     const btnBack = document.getElementById('btnBack');
+    function showMainAnimated() {
+        const mainEls = [
+            document.getElementById('main-content'),
+            document.getElementById('main-content-main'),
+            document.getElementById('main-content-footer')
+        ];
+        for (const el of mainEls) {
+            if (el) {
+                el.style.display = '';
+                el.classList.remove('in-frame');
+                setTimeout(() => el.classList.add('in-frame'), 50);
+            }
+        }
+        if(btnBack) btnBack.style.display = '';
+    }
     if (btnLanjut) {
         btnLanjut.addEventListener('click', function() {
             document.getElementById('welcome-overlay').style.opacity = 0;
             setTimeout(() => {
                 document.getElementById('welcome-overlay').setAttribute('hidden', '');
-                document.getElementById('main-content').style.display = '';
-                document.getElementById('main-content-main').style.display = '';
-                document.getElementById('main-content-footer').style.display = '';
-                if(btnBack) btnBack.style.display = '';
+                showMainAnimated();
             }, 500);
         });
     }
@@ -104,9 +116,17 @@ document.addEventListener('DOMContentLoaded', function() {
         btnBack.addEventListener('click', function() {
             document.getElementById('welcome-overlay').removeAttribute('hidden');
             document.getElementById('welcome-overlay').style.opacity = 1;
-            document.getElementById('main-content').style.display = 'none';
-            document.getElementById('main-content-main').style.display = 'none';
-            document.getElementById('main-content-footer').style.display = 'none';
+            const mainEls = [
+                document.getElementById('main-content'),
+                document.getElementById('main-content-main'),
+                document.getElementById('main-content-footer')
+            ];
+            for (const el of mainEls) {
+                if (el) {
+                    el.classList.remove('in-frame');
+                    setTimeout(() => el.style.display = 'none', 400);
+                }
+            }
             btnBack.style.display = 'none';
         });
     }
